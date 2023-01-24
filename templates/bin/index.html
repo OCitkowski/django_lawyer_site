@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% load solo_tags %}
+
+{% block content %}
+
+    {% get_solo 'bin.SiteConfiguration' as site_config %}
+
+    {{ site_config.site_name }}
+    {{ site_config.first_name }}
+    {{ site_config.second_name }}
+    {{ site_config.href_facebook }}
+    {{ site_config.href_instagram }}
+    {{ site_config.address }}
+
+{% endblock content %}
+hello
+</body>
+</html>
