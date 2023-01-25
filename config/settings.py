@@ -150,3 +150,6 @@ CACHES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 'solo.apps.SoloAppConfig'
+GET_SOLO_TEMPLATE_TAG_NAME = 'get_config' # default - get_solo
