@@ -28,6 +28,12 @@ class SiteConfiguration(SingletonModel):
 
     title_ge_in_touch_footer = models.CharField(max_length=32, default='title_ge_in_touch')
 
+    page_about_title_our_journey = models.CharField(max_length=32, default='page_about_title_our_journey')
+
+    page_practice_title_why_choose_us = models.CharField(max_length=32, default='page_practice_title_why_choose_us')
+    page_practice_title_why_choose_us = models.CharField(max_length=32, default='page_practice_title_why_choose_us')
+
+
     def __str__(self):
         return "Site Configuration"
 

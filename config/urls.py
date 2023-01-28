@@ -28,6 +28,7 @@ urlpatterns = [
     # path('home/', include('home_page.urls')),
     path('bin/', include('bin.urls')),
     path('about/', include('about_page.urls')),
+    path('practice/', include('practice_page.urls')),
     path('admin/', admin.site.urls),
 
 ]

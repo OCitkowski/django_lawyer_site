@@ -1,5 +1,4 @@
 from django.views.generic import TemplateView
-from bin.models import SiteConfiguration
 from bin.utils import MENU
 from .models import AboutOurJourney, AboutUs
 
