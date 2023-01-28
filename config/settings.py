@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 # My Apps
     'bin',
+    'about_page',
 ]
 
 MIDDLEWARE = [

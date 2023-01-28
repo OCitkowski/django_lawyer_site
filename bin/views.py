@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-from bin.models import SiteConfiguration
+from django.views.generic import TemplateView
 from bin.utils import MENU
 from django.utils import timezone
-from .models import SiteConfiguration
+# from .models import SiteConfiguration
 
 
 def custom_page_not_found_view(request, exception):
@@ -23,8 +22,8 @@ def custom_page_not_found_view(request, exception):
 #     return render(request, "bin/errors/400.html", {})
 
 
-class BinView(ListView):
-    model = SiteConfiguration
+class BinView(TemplateView):
+    # model = SiteConfiguration
     template_name = 'bin/index.html'
     context_object_name = 'basis'
 

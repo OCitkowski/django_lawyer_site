@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
+
 
 <head>
         <meta charset="utf-8">
@@ -24,3 +27,92 @@
         <link href="{% static 'bin/css/style.css' %}" rel="stylesheet">
 
     </head>
+
+
+<body>
+<div class="wrapper">
+    <!-- Top Bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1">
+                    <div class="logo">
+
+                        {% if site_config.foto %}
+                        <img src="{{ site_config.foto.url }}" alt="{{ site_config.site_name }}">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="logo">
+                        <h1>{{ site_config.site_name }} </h1>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+
+                    <div class="text">
+                        <h3> {{site_config.phone_number}} </h3>
+                        <p> {{site_config.opening_hour}} </p>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="social">
+                        <a href={{ site_config.href_twitter }}><i class="fab fa-twitter"></i></a>
+                        <a href={{ site_config.href_facebook }}><i class="fab fa-facebook-f"></i></a>
+                        <a href={{ site_config.href_instagram }}><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav-bar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+
+                        {% for item_menu in menu %}
+                        <a href="{{ item_menu.url_name }}" class="nav-item nav-link active">{{ item_menu.title }}</a>
+                        <!--
+                       <a href="about.html" class="nav-item nav-link">About</a>
+                       <a href="service.html" class="nav-item nav-link">Practice</a>
+                       <a href="team.html" class="nav-item nav-link">Attorneys</a>
+                       <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                       <div class="nav-item dropdown">
+                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                           <div class="dropdown-menu">
+                               <a href="blog.html" class="dropdown-item">Blog Page</a>
+                               <a href="single.html" class="dropdown-item">Single Page</a>
+                           </div>
+                       </div>
+                       <a href="contact.html" class="nav-item nav-link">Contact</a>
+                       -->
+                        {% empty %}
+                        <li> No menu have been added yet</li>
+                        {% endfor %}
+
+                    </div>
+                    <!--                    <div class="ml-auto">-->
+                    <!--                        &lt;!&ndash;-->
+                    <!--                        <a class="btn" href="https://htmlcodex.com/law-firm-website-template">Get Appointment</a>-->
+                    <!--                        &ndash;&gt;-->
+                    <!--                    </div>-->
+<!--                    <div class="text">-->
+
+<!--                        &lt;!&ndash;                        <p>{{site_config.phone_number}}</p>&ndash;&gt;-->
+<!--                        &lt;!&ndash;<h5>{{site_config.phone_number}}</h5>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        <p>{{site_config.opening_hour}}</p>&ndash;&gt;-->
+<!--                    </div>-->
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Nav Bar End -->

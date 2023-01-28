@@ -76,7 +76,7 @@ a:focus {
 /**********************************/
 .top-bar {
     position: relative;
-    height: 90px;
+    height: 120px;
     background: #000000;
 }
 
@@ -89,14 +89,14 @@ a:focus {
 .top-bar .logo h1 {
     margin: 0;
     color: #aa9166;
-    font-size: 75px;
-    line-height: 55px;
+    font-size: 70px;
+    line-height: 100px;
     font-weight: 800;
 }
 
 .top-bar .logo img {
     max-width: 100%;
-    max-height: 60px;
+    max-height: 100px;
 }
 
 .top-bar .top-bar-right {
@@ -110,7 +110,7 @@ a:focus {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 90px;
+    height: 120px;
     padding: 0 20px;
     text-align: center;
     border-left: 1px solid rgba(255, 255, 255, .15);
@@ -118,6 +118,15 @@ a:focus {
 
 .top-bar .text h2 {
     color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    margin: 0;
+}
+
+.top-bar .text h3 {
+    color: #aa9166;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -133,7 +142,7 @@ a:focus {
 
 .top-bar .social {
     display: flex;
-    height: 90px;
+    height: 120px;
     font-size: 0;
     justify-content: flex-end;
 }

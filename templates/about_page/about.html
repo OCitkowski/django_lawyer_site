@@ -1,0 +1,84 @@
+{% load static %}
+{% load solo_tags %}
+{% get_config 'bin.SiteConfiguration' as site_config %}
+
+{% include 'bin/header.html' %}
+{% block content %}
+
+<!-- About Start -->
+<div class="about">
+    <div class="container">
+
+        {% for item_AU in AboutUs %}
+
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+                <div class="about-img">
+                    <!--                    <img src="img/about.jpg" alt="Image">-->
+                    {% if item_AU.foto %}
+                    <img src={{ item_AU.foto.url }} alt={{ item_AU.title}}>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <div class="section-header">
+                    <h2>{{ item_AU.title }}</h2>
+                </div>
+                <div class="about-text">
+
+                    <p>
+                        {{ item_AU.text }}
+                    </p>
+                    <!--                    <a class="btn" href="">Learn More</a>-->
+                </div>
+            </div>
+        </div>
+        {% empty %}
+
+        {% endfor %}
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Timeline Start -->
+<div class="timeline">
+    <div class="container">
+
+
+        <!--        <div class="section-header">-->
+        <!--            <h2> '  ' </h2>-->
+        <!--        </div>-->
+        {% for item_AUJ in AboutOurJourney %}
+
+
+        <div class="timeline-start">
+            {% if item_AUJ.is_left %}
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h2><span> {{ item_AUJ.year }}</span>{{ item_AUJ.title }}</h2>
+                    <p>
+                        {{ item_AUJ.text }}
+                    </p>
+                </div>
+            </div>
+            {% else %}
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h2><span> {{ item_AUJ.year }}</span>{{ item_AUJ.title }}</h2>
+                    <p>
+                        {{ item_AUJ.text }}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% empty %}
+
+        {% endfor %}
+    </div>
+</div>
+<!-- Timeline End -->
+
+{% endblock content %}
+{% include 'bin/footer.html' %}
