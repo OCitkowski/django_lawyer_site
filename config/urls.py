@@ -27,6 +27,7 @@ handler404 = 'bin.views.custom_page_not_found_view'
 urlpatterns = [
     # path('home/', include('home_page.urls')),
     path('bin/', include('bin.urls')),
+    path('contact/', include('contact_page.urls')),
     path('about/', include('about_page.urls')),
     path('practice/', include('practice_page.urls')),
     path('admin/', admin.site.urls),

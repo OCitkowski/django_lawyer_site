@@ -1,8 +1,6 @@
 from django.views.generic import TemplateView
 from bin.utils import MENU
-
-
-# from .models import AboutOurJourney, AboutUs
+from .models import OurPracticesAreas, WhyChooseMe
 
 
 class PracticeView(TemplateView):
@@ -11,7 +9,7 @@ class PracticeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['AboutOurJourney'] = AboutOurJourney.objects.filter(status='p')
-        # context['AboutUs'] = AboutUs.objects.filter(status='p')
+        context['OurPracticesAreas'] = OurPracticesAreas.objects.filter(status='p')
+        context['WhyChooseMe'] = WhyChooseMe.objects.filter(status='p')
         context['menu'] = MENU
         return context

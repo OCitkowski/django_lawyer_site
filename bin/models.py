@@ -30,8 +30,15 @@ class SiteConfiguration(SingletonModel):
 
     page_about_title_our_journey = models.CharField(max_length=32, default='page_about_title_our_journey')
 
+    page_practice_titl_our_practices_areas = models.CharField(max_length=32, default='page_practice_titl_our_practices_areas')
     page_practice_title_why_choose_us = models.CharField(max_length=32, default='page_practice_title_why_choose_us')
-    page_practice_title_why_choose_us = models.CharField(max_length=32, default='page_practice_title_why_choose_us')
+    page_practice_foto = models.ImageField(verbose_name='Image', upload_to='images/practice/%Y/%m/%d', blank=True)
+
+    page_contact_title = models.CharField(max_length=32, default='page_contact_title')
+    page_contact_title_location = models.CharField(max_length=32, default='page_contact_title_location')
+    page_contact_title_phone = models.CharField(max_length=32, default='page_contact_title_phone')
+    page_contact_title_email = models.CharField(max_length=32, default='page_contact_title_email')
+
 
 
     def __str__(self):

@@ -1,0 +1,86 @@
+{% load static %}
+{% load solo_tags %}
+{% get_config 'bin.SiteConfiguration' as site_config %}
+
+{% include 'bin/header.html' %}
+{% block content %}
+
+{% csrf_token %}
+{{ form.non_field_errors }}
+
+
+<!-- Contact Start -->
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>{{ site_config.page_contact_title}}</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <div class="contact-text">
+                            <h2>page_contact_title_location</h2>
+                            <p>1{{ site_config.address }}</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa fa-phone-alt"></i>
+                        <div class="contact-text">
+                            <h2>page_contact_title_phone</h2>
+                            <p>{{ site_config.phone_number }}</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <div class="contact-text">
+                            <h2>page_contact_title_email</h2>
+                            <p>{{ site_config.email }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ф.І.О." required="required"
+                                   id="{{ form.name.id_for_label }}" name="{{ form.name.label }}"/>
+                            <label class="input__label" for="{{ form.name.id_for_label }}"></label>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required="required"
+                                   id="{{ form.email_address.id_for_label }}" name="{{ form.email_address.label }}"/>
+                            <label class="input__label" for="{{ form.email_address.id_for_label }}"></label>
+
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Ваше питання." required="required"
+                            id="{{ form.message.id_for_label }}" name="{{ form.message.label }}" rows="15"></textarea>
+                        </div>
+
+
+                        <div>
+                            <button class="btn" type="submit">Надіслати</button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+{% endblock content %}
+{% include 'bin/footer.html' %}
