@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'about_page',
     'practice_page',
     'contact_page',
+    'home_page',
 
 ]
 
