@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Carousel
+from .models import Carousel, ReviewFromClient
 
 
 @admin.action(description='Mark selected text as published')
@@ -24,4 +24,12 @@ class CarouselAdmin(admin.ModelAdmin):
     prepopulated_fields = {"title": ('status',)}
 
 
+class ReviewFromClientAdmin(admin.ModelAdmin):
+    list_display = ('client_name', 'status')
+    list_display_links = ('client_name', 'status')
+    actions = [make_published, make_draft, make_withdrawn]
+    prepopulated_fields = {"client_name": ('status',)}
+
+
 admin.site.register(Carousel, CarouselAdmin)
+admin.site.register(ReviewFromClient, ReviewFromClientAdmin)
